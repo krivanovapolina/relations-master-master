@@ -5,6 +5,7 @@ import com.example.relations.entity.Passport;
 import com.example.relations.repositories.AccountRepository;
 import com.example.relations.repositories.PassportRepository;
 import com.example.relations.services.PassportService;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,7 @@ import java.util.NoSuchElementException;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class PassportServiceimpl implements PassportService {
 
     private final PassportRepository passportRepository;

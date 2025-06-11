@@ -7,6 +7,7 @@ import com.example.relations.mapper.UserMapper;
 import com.example.relations.repositories.HobbyRepository;
 import com.example.relations.repositories.UserRepository;
 import com.example.relations.services.UserService;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class UserServiceimpl implements UserService {
 
     private final UserRepository userRepository;

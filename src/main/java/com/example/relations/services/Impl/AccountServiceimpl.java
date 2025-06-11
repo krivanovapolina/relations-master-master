@@ -4,6 +4,7 @@ import com.example.relations.DTO.AccountDTO;
 import com.example.relations.entity.Account;
 import com.example.relations.repositories.AccountRepository;
 import com.example.relations.services.AccountService;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,7 @@ import java.util.NoSuchElementException;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class AccountServiceimpl implements AccountService {
 
     private final AccountRepository accountRepository;

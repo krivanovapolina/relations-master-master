@@ -4,6 +4,7 @@ import com.example.relations.DTO.HobbyDTO;
 import com.example.relations.entity.Hobby;
 import com.example.relations.repositories.HobbyRepository;
 import com.example.relations.services.HobbyService;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,7 @@ import java.util.NoSuchElementException;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class HobbyServiceimpl implements HobbyService {
     private final HobbyRepository hobbyRepository;
     @Override

@@ -18,14 +18,14 @@ import java.util.List;
 public class PassportController {
     private final PassportService passportService;
 
-    @Operation(summary = "Find all passports", tags = {"Passport"}, description = "Find all passports for users", responses = {
+    @Operation(summary = "Find all passports", description = "Find all passports for users", responses = {
             @ApiResponse(responseCode = "200", description = "Passport was find successful")})
     @GetMapping
     public ResponseEntity<List<PassportDTO>> getPassport(){
         return ResponseEntity.ok().body(passportService.getAll());
     }
 
-    @Operation(summary = "Find passport by id", tags = {"Passport"}, description = "Find passport by id for users", responses = {
+    @Operation(summary = "Find passport by id", description = "Find passport by id for users", responses = {
             @ApiResponse(responseCode = "200", description = "Passport was found successful"),
             @ApiResponse(responseCode = "404", description = "Passport not found")})
     @GetMapping("/{id}")
@@ -33,7 +33,7 @@ public class PassportController {
         return ResponseEntity.ok().body(passportService.findById(id));
     }
 
-    @Operation(summary = "Create passport", tags = {"Passport"}, description = "Create new passport for users", responses = {
+    @Operation(summary = "Create passport", description = "Create new passport for users", responses = {
             @ApiResponse(responseCode = "200", description = "Passport was created successful"),
             @ApiResponse(responseCode = "404", description = "Passport not found")})
     @PostMapping
@@ -41,7 +41,7 @@ public class PassportController {
         return  ResponseEntity.ok().body((passportService.create(passportDTO)));
     }
 
-    @Operation(summary = "Update Passport", tags = {"Passport"}, description = "Update passport for users", responses = {
+    @Operation(summary = "Update Passport", description = "Update passport for users", responses = {
             @ApiResponse(responseCode = "200", description = "Passport was update successful"),
             @ApiResponse(responseCode = "404", description = "Passport not found")})
     @GetMapping("/{id}")
@@ -49,7 +49,7 @@ public class PassportController {
         return ResponseEntity.ok().body(passportService.update(id, passportDTO));
     }
 
-    @Operation(summary = "Delete Passport", tags = {"Passport"}, description = "Delete passport for users", responses = {
+    @Operation(summary = "Delete Passport", description = "Delete passport for users", responses = {
             @ApiResponse(responseCode = "200", description = "Passport was deleted successful"),
             @ApiResponse(responseCode = "404", description = "Passport not found")})
     @GetMapping("/{id}")

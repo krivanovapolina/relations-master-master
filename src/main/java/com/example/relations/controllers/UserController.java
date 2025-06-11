@@ -18,14 +18,14 @@ import java.util.List;
 public class UserController {
     private final UserService userService;
 
-    @Operation(summary = "Find all users", tags = {"User"}, description = "Find all users for users", responses = {
+    @Operation(summary = "Find all users", description = "Find all users for users", responses = {
             @ApiResponse(responseCode = "200", description = "User was find successful")})
     @GetMapping
     public ResponseEntity<List<UserDTO>> getUser(){
         return ResponseEntity.ok().body(userService.getAll());
     }
 
-    @Operation(summary = "Find user by id", tags = {"User"}, description = "Find user by id for users", responses = {
+    @Operation(summary = "Find user by id", description = "Find user by id for users", responses = {
             @ApiResponse(responseCode = "200", description = "User was found successful"),
             @ApiResponse(responseCode = "404", description = "User not found")})
     @GetMapping("/{id}")
@@ -33,7 +33,7 @@ public class UserController {
         return ResponseEntity.ok().body(userService.findById(id));
     }
 
-    @Operation(summary = "Create user", tags = {"User"}, description = "Create new user for users", responses = {
+    @Operation(summary = "Create user", description = "Create new user for users", responses = {
             @ApiResponse(responseCode = "200", description = "User was created successful"),
             @ApiResponse(responseCode = "404", description = "User not found")})
     @PostMapping
@@ -41,7 +41,7 @@ public class UserController {
         return  ResponseEntity.ok().body((userService.create(userDTO)));
     }
 
-    @Operation(summary = "Update User", tags = {"User"}, description = "Update user for users", responses = {
+    @Operation(summary = "Update User", description = "Update user for users", responses = {
             @ApiResponse(responseCode = "200", description = "User was update successful"),
             @ApiResponse(responseCode = "404", description = "User not found")})
     @GetMapping("/{id}")
@@ -49,7 +49,7 @@ public class UserController {
         return ResponseEntity.ok().body(userService.update(id, userDTO));
     }
 
-    @Operation(summary = "Delete User", tags = {"User"}, description = "Delete user for users", responses = {
+    @Operation(summary = "Delete User", description = "Delete user for users", responses = {
             @ApiResponse(responseCode = "200", description = "User was deleted successful"),
             @ApiResponse(responseCode = "404", description = "User not found")})
     @GetMapping("/{id}")
