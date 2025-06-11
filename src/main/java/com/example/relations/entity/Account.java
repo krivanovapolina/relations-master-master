@@ -14,6 +14,7 @@ import lombok.RequiredArgsConstructor;
 @Table(schema = "users_schema", name = "t_account")
 public class Account {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String name;
 
