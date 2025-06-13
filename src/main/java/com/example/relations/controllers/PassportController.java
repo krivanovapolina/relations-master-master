@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/passport")
+@RequestMapping("/api/passports")
 @Tag(name = "PASSPORT API", description = "CRUD операции паспорта")
 public class PassportController {
     private final PassportService passportService;

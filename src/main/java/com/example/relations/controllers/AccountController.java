@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/account")
+@RequestMapping("/api/accounts")
 @Tag(name = "ACCOUNT API", description = "CRUD операции паспорта")
 public class AccountController {
     private final AccountService accountService;

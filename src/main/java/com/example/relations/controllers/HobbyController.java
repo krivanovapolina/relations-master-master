@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/hobby")
+@RequestMapping("/api/hobbies")
 @Tag(name = "HOBBY API", description = "CRUD операции хобби")
 public class HobbyController {
     private final HobbyService hobbyService;
