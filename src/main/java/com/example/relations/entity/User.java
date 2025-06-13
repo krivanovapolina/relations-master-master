@@ -31,7 +31,7 @@ public class User {
     Passport passport;
 
     @ManyToMany
-    @JoinTable(
+    @JoinTable(schema = "user_schema",
             name = "t_users_hobbies",
             joinColumns = @JoinColumn(name = "c_user_id"),
             inverseJoinColumns = @JoinColumn(name = "c_hobby_id")
