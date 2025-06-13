@@ -44,7 +44,7 @@ public class HobbyController {
     @Operation(summary = "Update Hobby", description = "Update hobby for users", responses = {
             @ApiResponse(responseCode = "200", description = "Hobby was update successful"),
             @ApiResponse(responseCode = "404", description = "Hobby not found")})
-    @GetMapping("/{id}")
+    @PutMapping("/{id}")
     public  ResponseEntity<HobbyDTO> updatehobby(@PathVariable Long id, @RequestBody HobbyDTO hobbyDTO){
         return ResponseEntity.ok().body(hobbyService.update(id, hobbyDTO));
     }
