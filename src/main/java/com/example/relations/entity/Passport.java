@@ -8,7 +8,7 @@ import lombok.*;
 @NoArgsConstructor
 @Entity
 @Builder
-@Table(schema = "user_schema", name = "t_passport")
+@Table(schema = "users_schema", name = "t_passport")
 public class Passport {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
